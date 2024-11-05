@@ -1,0 +1,39 @@
+﻿<Window x:Class="MPZ2.Views.EmployeeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MPZ2.Views"
+        mc:Ignorable="d"
+        Title="Manage Employee" Height="400" Width="300"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Background="White">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Name" Foreground="#666666" Margin="0,10,0,0" />
+            <TextBox x:Name="NameTextBox" Height="30" Padding="5" BorderBrush="#C0C0C0" />
+
+            <TextBlock Text="Position" Foreground="#666666" Margin="0,10,0,0" />
+            <!-- DropDown для вибору позиції з бази даних -->
+            <ComboBox x:Name="PositionComboBox" Height="30" DisplayMemberPath="PositionName" SelectedValuePath="PositionId" />
+
+            <TextBlock Text="Hire Date" Foreground="#666666" Margin="0,10,0,0" />
+            <DatePicker x:Name="HireDatePicker" Height="30" Padding="5" BorderBrush="#C0C0C0" />
+
+            <TextBlock Text="Salary" Foreground="#666666" Margin="0,10,0,0" />
+            <TextBox x:Name="SalaryTextBox" Height="30" Padding="5" BorderBrush="#C0C0C0" />
+        </StackPanel>
+
+        <!-- Кнопки підтвердження/відхилення -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,10,0,0">
+            <Button Content="Confirm" Width="100" Margin="5" Background="#4CAF50" Foreground="White" Padding="10,5"
+                    Click="ConfirmButton_Click" />
+            <Button Content="Cancel" Width="100" Margin="5" Background="#F44336" Foreground="White" Padding="10,5"
+                    Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
